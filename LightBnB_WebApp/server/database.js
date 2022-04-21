@@ -158,7 +158,7 @@ exports.getAllReservations = getAllReservations;
 
       if (options.minimum_price_per_night) {
 
-        queryParams.push(Number(options.minimum_price_per_night));
+        queryParams.push(Number(options.minimum_price_per_night) * 100);
         query += ` AND cost_per_night >= $${queryParams.length}`;
 
       }
@@ -174,7 +174,7 @@ exports.getAllReservations = getAllReservations;
 
       if (options.minimum_price_per_night) {
 
-        queryParams.push(Number(options.minimum_price_per_night));
+        queryParams.push(Number(options.minimum_price_per_night) * 100);
         query += ` WHERE cost_per_night >= $${queryParams.length}`;
   
         if (options.maximum_price_per_night) {
@@ -205,6 +205,7 @@ exports.getAllReservations = getAllReservations;
 
     queryParams.push(options.minimum_rating);
     query += ` HAVING avg(rating) >= $${queryParams.length}`;
+    console.log('######', queryParams)
 
   }
 
@@ -234,7 +235,7 @@ exports.getAllProperties = getAllProperties;
 const addProperty = function(property) {
 
   const params = [property.owner_id, property.title, property.description, property.thumbnail_photo_url, property.cover_photo_url, 
-    Number(property.cost_per_night), Number(property.parking_spaces), Number(property.number_of_bathrooms), Number(property.number_of_bedrooms),
+    Number(property.cost_per_night) * 100, Number(property.parking_spaces), Number(property.number_of_bathrooms), Number(property.number_of_bedrooms),
   property.country, property.street, property.city, property.province, property.post_code];
 
   return pool
