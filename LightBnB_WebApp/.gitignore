@@ -87,4 +87,5 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-echo .DS_Store
+*/.DS_Store
+.DS_Store
