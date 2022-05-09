@@ -17,4 +17,4 @@ LightBnB is a simple AirBnB clone that uses HTML, CSS, JS, jQuery and AJAX front
 
 ## Screenshots
 
-!["AirBnB home page."]()
+!["AirBnB home page."](https://github.com/GraceLR/LightBnB/blob/master/docs/Screen%20Shot%202022-05-09%20at%204.45.40%20PM.png)
