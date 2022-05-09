@@ -66,11 +66,9 @@ module.exports = function(router, database) {
           res.send({error: "no user with that id"});
           return;
         }
-    
         res.send({user: {name: user.name, email: user.email, id: userId}});
       })
       .catch(e => res.send(e));
   });
-
   return router;
 }
